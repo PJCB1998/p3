@@ -19,7 +19,7 @@ function LoginForm() {
     return (
         <div>
             
-            <div className="wrapper">
+            <div className ="wrapper">
                 <div className="form">
                     <h1 className="title">P3</h1>
                     <div align="center">
@@ -33,11 +33,11 @@ function LoginForm() {
                         </button>
                     </div>
                 </div>
-                {showLoginSpecial && <LoginSpecial></LoginSpecial>}
+                
                             
             </div>
 
-            
+            {showLoginSpecial && <LoginSpecial></LoginSpecial>}
 
         </div>
 
