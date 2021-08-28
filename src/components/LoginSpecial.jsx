@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import "./LoginSpecial.css";
+import "./Login.css";
 import axios from 'axios';
 
 
-function LoginSpecial() {
+function LoginSpecial({handleDisplay}) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -31,6 +31,7 @@ function LoginSpecial() {
 
         <div className="modal">
             <div className="modal_content">
+            <button className= 'backButton' onClick={handleDisplay}>Back</button>
                 <div className="form">
                     <h1 className="title">Specialist</h1>
                     <form onSubmit={handleSubmit}>
