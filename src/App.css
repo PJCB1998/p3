@@ -7,21 +7,21 @@
 }
 
 .ce-chat-list {
-  background-color: rgb(240, 240, 240) !important;
+  background-color: rgb(20,29,38) !important;
 }
 
 .ce-chats-container {
-  background-color: rgb(240, 240, 240) !important;
+  background-color: rgb(20,29,38) !important;
 }
 
 .ce-active-chat-card {
-  background-color: #cabcdc !important;
-  border: 4px solid #cabcdc !important;
+  background-color: rgb(20,29,38) !important;
+  border: 3px solid #757575 !important;
   border-radius: 0px !important;
 }
 
 .ce-chat-subtitle-text {
-  color: #595959 !important;
+  color: #757575 !important;
 }
 
 .ce-chat-form-container {
@@ -35,7 +35,7 @@
 
 .ce-primary-button {
   border-radius: 6px !important;
-  background-color: #7554a0 !important;
+  background-color: RGBA( 100, 149, 237, 1 ) !important;
   position: relative;
   bottom: 1px;
 }
@@ -46,7 +46,7 @@
 }
 
 .ce-settings {
-  background-color: rgb(240, 240, 240) !important;
+  background-color: rgb(20,29,38) !important;
 }
 
 .ce-autocomplete-input {
@@ -57,7 +57,7 @@
 .ce-autocomplete-options {
   border-radius: 6px !important;
   border: 1px solid #3b2a50 !important;
-  background-color: white !important;
+  background-color: rgb(20,29,38)  !important;
 }
 
 .ce-chat-settings-container {
@@ -74,7 +74,7 @@
   height: 100%;
   width: 100%;
   overflow: scroll;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(20,29,38);
 }
 
 .chat-title-container {
@@ -84,7 +84,7 @@
 }
 
 .chat-title {
-  color: #7554a0;
+  color: #d7b9fd;
   font-weight: 800;
   font-size: 24px;
 }
@@ -112,7 +112,7 @@
   width: 44px;
   height: 44px;
   border-radius: 22px;
-  color: white;
+  color: rgb(20,29,38);
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
@@ -158,14 +158,14 @@
   bottom: 0px;
   width: calc(100% - 36px);
   padding: 18px;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(20,29,38);
 }
 
 .message-form {
   overflow: hidden;
   border-radius: 6px;
   border: 1px solid #3b2a50;
-  background-color: white;
+  background-color: rgb(20,29,38);
 }
 
 .message-input {
@@ -217,8 +217,7 @@
 .wrapper {
   height: 100vh;
 	width: 100%;
-  background: rgb(117,84,160);
-  background: linear-gradient(90deg, rgba(117,84,160,1) 7%, rgba(117,84,160,1) 17%, rgba(106,95,168,1) 29%, rgba(99,103,174,1) 44%, rgba(87,116,184,1) 66%, rgba(70,135,198,1) 83%, rgba(44,163,219,1) 96%, rgba(22,188,237,1) 100%, rgba(0,212,255,1) 100%);  
+  background: rgb(20,29,38); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,8 +256,8 @@
 .backButton{
   border-radius: 4px;
   border: none;
-  background-color: white;
-  color: black;
+  background-color: rgb(0,172,238);
+  color: white;
   text-align: center;
   text-transform: uppercase;
   font-size: 20px;
@@ -271,10 +270,10 @@
 }
 
 .button {
-  border-radius: 4px;
-  border: none;
-  background-color: white;
-  color: black;
+  border: 3px solid #757575 !important;
+  border-radius: 0px !important;
+  background-color: rgba(20,29,38);
+  color: #757575;
   text-align: center;
   text-transform: uppercase;
   font-size: 22px;

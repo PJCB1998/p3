@@ -33,7 +33,8 @@ function LoginForm() {
             
             <div className ="wrapper">
                 <div className="form">
-                    <h1 className="title">P3</h1>
+                    <h1 className="title">PHILA</h1>
+                    <h1 className="title">You are important</h1>
                     <div align="center">
 
                         <button className="button" onClick={handleHelp}>
