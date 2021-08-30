@@ -2,10 +2,12 @@ import { useState } from 'react';
 import axios from 'axios';
 import LoginSpecial from './LoginSpecial';
 import LoginHelp from './LoginHelp';
+import Register from './Register';
 
 function LoginForm() {
     const [showLoginSpecial, setShowLoginSpecial] = useState(false);
     const [showLoginHelp, setShowLoginHelp] = useState(false);
+    const [showRegister, setShowRegister] = useState(false);
 
     function handleHelp() {
         setShowLoginHelp(true)
@@ -15,10 +17,15 @@ function LoginForm() {
         setShowLoginSpecial(true);
     }
 
+    function handleRegister() {
+        setShowRegister(true);
+    }
+
     function handleDisplay(){
         console.log('in display')
         setShowLoginHelp(false)
         setShowLoginSpecial(false)
+        setShowRegister(false)
     }
 
     return (
@@ -29,13 +36,16 @@ function LoginForm() {
                     <h1 className="title">P3</h1>
                     <div align="center">
 
-                        <buton className="button" onClick={handleHelp}>
+                        <button className="button" onClick={handleHelp}>
                             <span>Get Help</span>
-                        </buton>
+                        </button>
                         <button className="button" onClick={handleSpecial}>
                             <span>Login as Specialist</span>
-                            
                         </button>
+                        <button className="button" onClick={handleRegister}>
+                            <span>Sign In</span>
+                        </button>
+
                     </div>
                 </div>
                 
@@ -44,11 +54,9 @@ function LoginForm() {
 
             {showLoginSpecial && <LoginSpecial handleDisplay={handleDisplay}/>}
             {showLoginHelp && <LoginHelp handleDisplay={handleDisplay}/>}
+            {showRegister && <Register handleDisplay={handleDisplay}/>}
 
         </div>
-
-
-
 
     );
 

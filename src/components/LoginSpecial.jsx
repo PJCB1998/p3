@@ -36,15 +36,17 @@ function LoginSpecial({handleDisplay}) {
                     <h1 className="title">Specialist</h1>
                     <form onSubmit={handleSubmit}>
                         <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="input" placeholder="Username" required></input>
-                        <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required></input>
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required></input>
                         <div align="center">
                             <button type="submit" className="button">
                                 <span>Go</span>
                             </button>
                         </div>
-                        <h2 className="error">
-                            {error}
-                        </h2>
+                        <div className="error">
+                            <h2 >
+                                {error}
+                            </h2>
+                        </div>
                     </form>
                 </div>
             </div>
