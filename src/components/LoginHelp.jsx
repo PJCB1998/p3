@@ -33,8 +33,8 @@ function LoginHelp({ handleDisplay }) {
   const handleEnter = async (e) => {
     e.preventDefault();
 
-    const u = Math.random().toString(36).slice(-4)
-    const p = Math.random().toString(36).slice(-4)
+    const u = Math.random().toString(36).slice(-6)
+    const p = Math.random().toString(36).slice(-6)
     setUsername(u) 
     setPassword(p)
 
@@ -79,11 +79,8 @@ function LoginHelp({ handleDisplay }) {
         setError("Incorrect Credientials");
       }
 
-
   };
 
-
- 
 
   return (
     <div className="modal">
