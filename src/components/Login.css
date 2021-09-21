@@ -19,6 +19,9 @@
   background-color: rgba(20,29,38);
   border: 2px solid #757575 !important;
   border-radius: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* .error {

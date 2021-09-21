@@ -4,15 +4,16 @@ import axios from "axios";
 import ErrorMessage from "./ErrorMessage";
 
 function LoginSpecial({ handleDisplay }) {
+  //variables
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [goodUsername, setGoodUsername] = useState(true);
   const [goodPassword, setGoodPassword] = useState(true);
 
+  //metodo submit, maneja credenciales incorrectas e ingreso a la aplicacion
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     authUser();
 
     const authObject = {
@@ -21,44 +22,51 @@ function LoginSpecial({ handleDisplay }) {
       "User-Secret": password,
     };
 
-    if(goodUsername && goodPassword){
-        try {
-          await axios.get("https://api.chatengine.io/chats", {
-            headers: authObject,
-          });
-    
-          localStorage.setItem("username", username);
-          localStorage.setItem("password", password);
-    
-          window.location.reload();
-        } catch (error) {
-          setError("Incorrect Credientials");
-        }
+    //verificacion de credenciales
+    if (goodUsername && goodPassword) {
+      alert("pq");
+      try {
+        await axios.get("https://api.chatengine.io/chats", {
+          headers: authObject,
+        });
+
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        //ingreso a la aplicacion
+        window.location.reload();
+      } catch (error) {
+        setError("Incorrect Credientials");
+      }
     }
   };
 
+  // conexion con backend, validar usuario
   const authUser = async () => {
-    await axios
+    const x = await axios
       .post("http://localhost:3001/Login/api/auth", {
         user: username,
         password: password,
-        type: 'helper'
+        type: "helper",
       })
       .then((res) => {
         console.log(res);
         setGoodPassword(res.data.goodPassword);
         setGoodUsername(res.data.goodUser);
       });
+    return x;
   };
 
+  //vista
   return (
     <div className="modal">
       <div className="modal_content">
-        <button className="backButton" onClick={handleDisplay}>
-          Back
-        </button>
         <div className="form">
-          <h1 className="title">Specialist</h1>
+          <div>
+            <button className="backButton" onClick={handleDisplay}>
+              Back
+            </button>
+            <h1 className="title">Specialist</h1>
+          </div>
           <form onSubmit={handleSubmit}>
             <input
               type="text"

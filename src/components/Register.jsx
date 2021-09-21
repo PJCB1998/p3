@@ -39,8 +39,8 @@ const Register = ({ handleDisplay }) => {
           console.log(error);
         });
 
-        enterPage()
-    } 
+      enterPage();
+    }
   };
 
   const insertUser = async () => {
@@ -64,32 +64,37 @@ const Register = ({ handleDisplay }) => {
       });
   };
 
-
-  const enterPage = async ()=> {
-    const authObject= { 'Project-ID':"1db65471-ab4a-4d9f-8a77-4ff550fd067b",'User-Name':username,'User-Secret':password};
+  const enterPage = async () => {
+    const authObject = {
+      "Project-ID": "1db65471-ab4a-4d9f-8a77-4ff550fd067b",
+      "User-Name": username,
+      "User-Secret": password,
+    };
 
     try {
-       await axios.get('https://api.chatengine.io/chats',{ headers: authObject});
+      await axios.get("https://api.chatengine.io/chats", {
+        headers: authObject,
+      });
 
-       localStorage.setItem('username',username);
-       localStorage.setItem('password', password);
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
 
-       window.location.reload();
-    } 
-    
-    catch(error){
-        setError('Incorrect Credientials')
+      window.location.reload();
+    } catch (error) {
+      setError("Incorrect Credientials");
     }
-  }
+  };
 
   return (
     <div className="modal">
       <div className="modal_content">
-        <button className="backButton" onClick={handleDisplay}>
-          Back
-        </button>
         <div className="form">
-          <h1 className="title">Sign in</h1>
+          <div>
+            <button className="backButton" onClick={handleDisplay}>
+              Back
+            </button>
+            <h1 className="title">Sign in</h1>
+          </div>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -139,7 +144,5 @@ const Register = ({ handleDisplay }) => {
     </div>
   );
 };
-
-
 
 export default Register;
