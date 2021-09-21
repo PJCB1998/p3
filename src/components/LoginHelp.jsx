@@ -85,11 +85,13 @@ function LoginHelp({ handleDisplay }) {
   return (
     <div className="modal">
       <div className="modal_content">
-        <button className="backButton" onClick={handleDisplay}>
+        <div className="form">
+          <div>
+          <button className="backButton" onClick={handleDisplay}>
           Back
         </button>
-        <div className="form">
           <h1 className="title">Help me!</h1>
+          </div>
           <div align="center">
             <form onSubmit={handleSubmit}>
               <input

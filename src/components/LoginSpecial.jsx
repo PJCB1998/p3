@@ -54,11 +54,14 @@ function LoginSpecial({ handleDisplay }) {
   return (
     <div className="modal">
       <div className="modal_content">
-        <button className="backButton" onClick={handleDisplay}>
+        
+        <div className="form">
+          <div>
+          <button className="backButton" onClick={handleDisplay}>
           Back
         </button>
-        <div className="form">
           <h1 className="title">Specialist</h1>
+          </div>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
