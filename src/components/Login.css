@@ -17,11 +17,18 @@
   width: 100%;
   max-width: 640px;
   background-color: rgba(20,29,38);
-  border: 2px solid #757575 !important;
-  border-radius: 0px !important;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #757575 !important;
+  border-radius: 0px !important;
+<<<<<<< HEAD
+  display: flex;
+  justify-content: center;
+  align-items: center;
+=======
+  
+>>>>>>> ef4ace64594147f173fad075196f6020649e9fde
 }
 
 /* .error {
