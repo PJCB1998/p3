@@ -4,7 +4,7 @@ import LoginSpecial from './LoginSpecial';
 import LoginHelp from './LoginHelp';
 import Register from './Register';
 
-function LoginForm() {
+function LoginForm(props) {
     const [showLoginSpecial, setShowLoginSpecial] = useState(false);
     const [showLoginHelp, setShowLoginHelp] = useState(false);
     const [showRegister, setShowRegister] = useState(false);

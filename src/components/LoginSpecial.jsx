@@ -60,22 +60,12 @@ function LoginSpecial({ handleDisplay }) {
   return (
     <div className="modal">
       <div className="modal_content">
-<<<<<<< HEAD
         <div className="form">
           <div>
             <button className="backButton" onClick={handleDisplay}>
               Back
             </button>
             <h1 className="title">Specialist</h1>
-=======
-        
-        <div className="form">
-          <div>
-          <button className="backButton" onClick={handleDisplay}>
-          Back
-        </button>
-          <h1 className="title">Specialist</h1>
->>>>>>> ef4ace64594147f173fad075196f6020649e9fde
           </div>
           <form onSubmit={handleSubmit}>
             <input
