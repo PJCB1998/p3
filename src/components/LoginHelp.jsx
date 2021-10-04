@@ -109,17 +109,10 @@ function LoginHelp({ handleDisplay }) {
       <div className="modal_content">
         <div className="form">
           <div>
-<<<<<<< HEAD
             <button className="backButton" onClick={handleDisplay}>
               Back
             </button>
             <h1 className="title">Help me!</h1>
-=======
-          <button className="backButton" onClick={handleDisplay}>
-          Back
-        </button>
-          <h1 className="title">Help me!</h1>
->>>>>>> ef4ace64594147f173fad075196f6020649e9fde
           </div>
           <div align="center">
             <form onSubmit={handleSubmit}>
