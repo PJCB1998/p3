@@ -26,7 +26,7 @@ function Cards() {
             <CardItem
               src="images/img-3.jpg"
               text="Estos videos pueden ayudarte con tus problemas"
-              label="Mystery"
+              label="Videos"
               path="/products"
             />
             <CardItem
