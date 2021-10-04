@@ -1,7 +1,18 @@
 import React from "react";
 import "../../App.css";
-
-export default function Products() {
-  return <h1 className="products">VIDEOS</h1>;
+import ReactPlayer from "react-player";
+function Products() {
+  return (
+    <div className="products">
+      <ReactPlayer
+        url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        width="50%"
+        height="50%"
+        position=""
+        controls
+        playing
+      />
+    </div>
+  );
 }
-//Products equivale a videos
+export default Products;
