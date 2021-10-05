@@ -30,10 +30,10 @@ function Cards() {
               path="/products"
             />
             <CardItem
-              src="images/img-8.jpg"
-              text="Una adicional para poner algo luego"
-              label="Adicional"
-              path="/"
+              src="images/img-2.jpg"
+              text="Chatea en directo con un experto"
+              label="chat"
+              path="/chat"
             />
           </ul>
         </div>

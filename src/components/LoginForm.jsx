@@ -46,10 +46,6 @@ function LoginForm(props) {
                         <button className="button" onClick={handleRegister}>
                             <span>Sign In</span>
                         </button>
-                        <button className="button" >
-                            <span>Learn about mental health</span>
-                        </button>
-
                     </div>
                 </div>
                 
