@@ -1,5 +1,6 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import "./Cards.css";
 
 function Cards2() {
   return (
