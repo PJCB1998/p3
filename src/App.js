@@ -6,7 +6,7 @@ import OptionsSettings from './components/OptionsSettings';
 
 
 function App() {
-  if (!localStorage.getItem("username")) return <LoginForm></LoginForm>;
+/*   if (!localStorage.getItem("username")) return <LoginForm></LoginForm>; */
   return (
     <ChatEngine
       height="100vh"

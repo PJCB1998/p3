@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ErrorMessage from "./ErrorMessage";
+import { Link, Redirect } from "react-router-dom";
 
 const Register = ({ handleDisplay }) => {
   const [username, setUsername] = useState("");
@@ -85,14 +86,17 @@ const Register = ({ handleDisplay }) => {
     }
   };
 
-  return (
+  return (localStorage.getItem("username"))? <Redirect to='/chat' />
+  : (
     <div className="modal">
       <div className="modal_content">
         <div className="form">
           <div>
-            <button className="backButton" onClick={handleDisplay}>
+          <Link to ='/loginForm'>
+            <button className="backButton">
               Back
             </button>
+            </Link>
             <h1 className="title">Sign in</h1>
           </div>
           <form onSubmit={handleSubmit}>

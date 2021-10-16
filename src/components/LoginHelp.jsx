@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import "./Login.css";
 import ErrorMessage from "./ErrorMessage";
 import axios from "axios";
+import {Link ,  Redirect, useHistory} from 'react-router-dom'
 
-function LoginHelp({ handleDisplay }) {
+function LoginHelp() {
+
   //variables
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [goodUsername, setGoodUsername] = useState(true);
-  const [goodPassword, setGoodPassword] = useState(true);
+  const [goodUsername, setGoodUsername] = useState(false);
+  const [goodPassword, setGoodPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState('')
+  const [userError, setUserError] = useState('')
+
+  useEffect(()=> {
+    if (goodPassword && goodUsername){
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+      window.location.reload();
+    }
+  },)
 
   //manejo de ingreso con validacion
   const handleSubmit = async (e) => {
@@ -82,7 +94,8 @@ function LoginHelp({ handleDisplay }) {
       localStorage.setItem("username", u);
       localStorage.setItem("password", p);
 
-      window.location.reload();
+
+
     } catch (error) {
       setError("Incorrect Credientials");
     }
@@ -97,21 +110,39 @@ function LoginHelp({ handleDisplay }) {
         type: "philler",
       })
       .then((res) => {
-        console.log(res);
-        setGoodPassword(res.data.goodPassword);
-        setGoodUsername(res.data.goodUser);
+        console.log(res.data);
+
+        if(res.data.goodPassword){
+          setPasswordError('')
+          setGoodPassword(true);
+        }else{
+          setPasswordError('woops! you may have put password incorrectly ')
+          setGoodPassword(false);
+        }
+
+        if(res.data.goodUser){
+          setUserError('')
+          setGoodUsername(true);
+        }else{
+          setGoodUsername(false);
+          setUserError('woops! this username does not fit here')
+        }
+        
       });
   };
 
   // vistas
-  return (
+  return (localStorage.getItem("username"))? (<Redirect to='/chat' />)
+  : (
     <div className="modal">
       <div className="modal_content">
         <div className="form">
           <div>
-            <button className="backButton" onClick={handleDisplay}>
+            <Link to ='/loginForm'>
+            <button className="backButton">
               Back
             </button>
+            </Link>
             <h1 className="title">Help me!</h1>
           </div>
           <div align="center">
@@ -135,6 +166,7 @@ function LoginHelp({ handleDisplay }) {
               <button type="submit" className="button">
                 <span>Go</span>
               </button>
+              
               <hr />
             </form>
             <button
@@ -150,12 +182,12 @@ function LoginHelp({ handleDisplay }) {
           <div className="error">
             {!goodUsername && (
               <ErrorMessage>
-                woops! this username does not fit here
+                {userError}
               </ErrorMessage>
             )}
             {!goodPassword && (
               <ErrorMessage>
-                woops! you may have put password incorrectly
+                {passwordError}
               </ErrorMessage>
             )}
           </div>
@@ -164,5 +196,7 @@ function LoginHelp({ handleDisplay }) {
     </div>
   );
 }
+
+
 
 export default LoginHelp;

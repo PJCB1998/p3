@@ -3,30 +3,9 @@ import axios from 'axios';
 import LoginSpecial from './LoginSpecial';
 import LoginHelp from './LoginHelp';
 import Register from './Register';
+import { Link } from 'react-router-dom';
 
 function LoginForm(props) {
-    const [showLoginSpecial, setShowLoginSpecial] = useState(false);
-    const [showLoginHelp, setShowLoginHelp] = useState(false);
-    const [showRegister, setShowRegister] = useState(false);
-
-    function handleHelp() {
-        setShowLoginHelp(true)
-    }
-
-    function handleSpecial() {
-        setShowLoginSpecial(true);
-    }
-
-    function handleRegister() {
-        setShowRegister(true);
-    }
-
-    function handleDisplay(){
-        console.log('in display')
-        setShowLoginHelp(false)
-        setShowLoginSpecial(false)
-        setShowRegister(false)
-    }
 
     return (
         <div>
@@ -37,24 +16,28 @@ function LoginForm(props) {
                     <h1 className="title">You are important</h1>
                     <div align="center">
 
-                        <button className="button" onClick={handleHelp}>
+                        <Link to='/loginHelp' >
+                        <button className="button">
                             <span>Get Help</span>
                         </button>
-                        <button className="button" onClick={handleSpecial}>
+                        </Link>
+
+                        <Link to='/loginSpecial' >
+                        <button className="button" >
                             <span>Login as Specialist</span>
                         </button>
-                        <button className="button" onClick={handleRegister}>
+                        </Link>
+                        <Link to='/signIn' >
+                        <button className="button" >
                             <span>Sign In</span>
                         </button>
+                        </Link>
                     </div>
                 </div>
                 
                             
             </div>
 
-            {showLoginSpecial && <LoginSpecial handleDisplay={handleDisplay}/>}
-            {showLoginHelp && <LoginHelp handleDisplay={handleDisplay}/>}
-            {showRegister && <Register handleDisplay={handleDisplay}/>}
 
         </div>
 

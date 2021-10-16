@@ -3,7 +3,7 @@ import './Login.css'
 const ErrorMessage = ({ children }) => {
     return (
       <div className="error">
-        <p>Error: {children}</p>
+        <p> {children}</p>
       </div>
     );
   };

@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactPlayer from "react-player";
 import "./Cards.css";
 
 function Cards2() {
+  const [algo, setalgo] = useState(0)
   return (
     <div className="cards">
       <h1>Estos videos podrían servirte</h1>
