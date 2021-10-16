@@ -6,7 +6,6 @@ import {Link ,  Redirect, useHistory} from 'react-router-dom'
 
 function LoginHelp() {
 
-
   //variables
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
