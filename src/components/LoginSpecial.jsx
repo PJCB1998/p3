@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Login.css";
 import axios from "axios";
 import ErrorMessage from "./ErrorMessage";
+import {Link, Redirect} from 'react-router-dom'
+
 
 function LoginSpecial({ handleDisplay }) {
   //variables
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [goodUsername, setGoodUsername] = useState(true);
-  const [goodPassword, setGoodPassword] = useState(true);
+  const [goodUsername, setGoodUsername] = useState(false);
+  const [goodPassword, setGoodPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState('')
+  const [userError, setUserError] = useState('')
+
+  useEffect(()=> {
+    if (goodPassword && goodUsername){
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+      window.location.reload();
+    }
+  },)
 
   //metodo submit, maneja credenciales incorrectas e ingreso a la aplicacion
   const handleSubmit = async (e) => {
@@ -24,7 +36,6 @@ function LoginSpecial({ handleDisplay }) {
 
     //verificacion de credenciales
     if (goodUsername && goodPassword) {
-      alert("pq");
       try {
         await axios.get("https://api.chatengine.io/chats", {
           headers: authObject,
@@ -42,29 +53,46 @@ function LoginSpecial({ handleDisplay }) {
 
   // conexion con backend, validar usuario
   const authUser = async () => {
-    const x = await axios
+    await axios
       .post("http://localhost:3001/Login/api/auth", {
         user: username,
         password: password,
         type: "helper",
       })
       .then((res) => {
-        console.log(res);
-        setGoodPassword(res.data.goodPassword);
-        setGoodUsername(res.data.goodUser);
+        console.log(res.data);
+
+        if(res.data.goodPassword){
+          setPasswordError('')
+          setGoodPassword(true);
+        }else{
+          setPasswordError('woops! you may have put password incorrectly ')
+          setGoodPassword(false);
+        }
+
+        if(res.data.goodUser){
+          setUserError('')
+          setGoodUsername(true);
+        }else{
+          setGoodUsername(false);
+          setUserError('woops! this username does not fit here')
+        }
+
       });
-    return x;
   };
 
   //vista
-  return (
+  return (localStorage.getItem("username")) ? (<Redirect to ='/chat' />)
+  : (
     <div className="modal">
       <div className="modal_content">
         <div className="form">
           <div>
-            <button className="backButton" onClick={handleDisplay}>
+          <Link to ='/loginForm'>
+            <button className="backButton">
               Back
             </button>
+            </Link>
             <h1 className="title">Specialist</h1>
           </div>
           <form onSubmit={handleSubmit}>
@@ -85,21 +113,22 @@ function LoginSpecial({ handleDisplay }) {
               required
             ></input>
             <div align="center">
-              <button type="submit" className="button">
+              <button type="submit" className="button"  onClick={handleSubmit}  >
                 <span>Go</span>
               </button>
+
             </div>
             <div className="error">
-              {!goodUsername && (
-                <ErrorMessage>
-                  woops! this username does not fit here
-                </ErrorMessage>
-              )}
-              {!goodPassword && (
-                <ErrorMessage>
-                  woops! you may have put password incorrectly
-                </ErrorMessage>
-              )}
+            {!goodUsername && (
+              <ErrorMessage>
+                {userError}
+              </ErrorMessage>
+            )}
+            {!goodPassword && (
+              <ErrorMessage>
+                {passwordError}
+              </ErrorMessage>
+            )}
             </div>
           </form>
         </div>
@@ -107,5 +136,7 @@ function LoginSpecial({ handleDisplay }) {
     </div>
   );
 }
+
+
 
 export default LoginSpecial;
