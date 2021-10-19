@@ -85,7 +85,7 @@ function Services() {
                 <CardMedia
                   className={classes.media}
                   image="images/hotline.jpg"
-                  title="Contemplative Reptile"
+                  title="Hot lines"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -110,7 +110,7 @@ function Services() {
                 <CardMedia
                   className={classes.media}
                   image="images/s3.png"
-                  title="Contemplative Reptile"
+                  title="Origen enfermedades"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -153,7 +153,7 @@ function Services() {
                 <CardMedia
                   className={classes.media}
                   image="images/s2.jpg"
-                  title="Contemplative Reptile"
+                  title="Como apoyar"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -195,7 +195,7 @@ function Services() {
                 <CardMedia
                   className={classes.media}
                   image="images/s1.jpg"
-                  title="Contemplative Reptile"
+                  title="Autoestima"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
