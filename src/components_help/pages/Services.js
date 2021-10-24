@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
@@ -12,7 +11,6 @@ import CardActions from "@material-ui/core/CardActions";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
-import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 import Pagination from "@material-ui/lab/Pagination";
 
 const useStyles = makeStyles((theme) => ({
@@ -96,9 +94,14 @@ function Services() {
                     color="textSecondary"
                     component="p"
                   >
-                    Argentina:800 5555 5522, Brazil:0800 891 7391, Canada:866
-                    246 9224, Colombia:800 5555 5522, Mexico:001 800 514 3716,
-                    España:800 5555 5522, Estados Unidos:866 246 9224.
+                    <a
+                      href="https://home.kpmg/co/es/home/misc/international-hotline-numbers.html"
+                      target="blank"
+                    >
+                      Argentina:800 5555 5522, Brazil:0800 891 7391, Canada:866
+                      246 9224, Colombia:800 5555 5522, Mexico:001 800 514 3716,
+                      España:800 5555 5522, Estados Unidos:866 246 9224.
+                    </a>
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -121,10 +124,15 @@ function Services() {
                     color="textSecondary"
                     component="p"
                   >
-                    Una persona que sufre una enfermedad mental no puede
-                    controlar sus síntomas por sí sola debido a que su origen es
-                    algo orgánico y que no obedece a su voluntad de querer
-                    tenerla o no.
+                    <a
+                      href="https://www.clinicasanpablo.co/educando/hablemos-de-salud-mental/las-enfermedades-mentales-y-su-origen"
+                      target="blank"
+                    >
+                      Una persona que sufre una enfermedad mental no puede
+                      controlar sus síntomas por sí sola debido a que su origen
+                      es algo orgánico y que no obedece a su voluntad de querer
+                      tenerla o no.
+                    </a>
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -164,9 +172,12 @@ function Services() {
                     color="textSecondary"
                     component="p"
                   >
-                    Ayudar a una persona con depresión puede ser todo un
-                    desafío. Si una persona cercana sufre depresión, es posible
-                    que sientas impotencia y que te preguntes qué debes hacer.
+                    <a href="https://acortar.link/yb8Ehy" target="blank">
+                      Ayudar a una persona con depresión puede ser todo un
+                      desafío. Si una persona cercana sufre depresión, es
+                      posible que sientas impotencia y que te preguntes qué
+                      debes hacer.
+                    </a>
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -206,9 +217,14 @@ function Services() {
                     color="textSecondary"
                     component="p"
                   >
-                    Sin autoestima, nuestros temores nos encierran en la zona de
-                    confort, nos castigan y nos impiden luchar por lo que
-                    realmente queremos.
+                    <a
+                      href="https://habilidadsocial.com/aumentar-autoestima-ciencia/"
+                      target="blank"
+                    >
+                      Sin autoestima, nuestros temores nos encierran en la zona
+                      de confort, nos castigan y nos impiden luchar por lo que
+                      realmente queremos.
+                    </a>
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -232,6 +248,7 @@ function Services() {
             </Card>
           </Grid>
         </Grid>
+
         <Box my={4} className={classes.paginationContainer}>
           <Pagination count={10} />
         </Box>
