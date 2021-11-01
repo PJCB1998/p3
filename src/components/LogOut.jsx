@@ -15,9 +15,9 @@ return (
     <div className="modal">
         <div className="modal_content">
             <div>
-            <h1>Log Out</h1>
+            <h1 style={{color:'#d1d0d0'}}>Log Out</h1>
 
-            <div>¿Desea Gurarar El Usuario Para Futuras Consultas?</div>
+            <div style={{color:'#d1d0d0'}}>¿Desea Guardar El Usuario Para Futuras Consultas?</div>
             <div>
                 <button className ="button">
                 SI
